@@ -1,0 +1,18 @@
+package com.example.webservicess.resources;
+
+import com.example.webservicess.entities.User;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping(value = "/users")
+public class UserResource {
+
+    @GetMapping
+    ResponseEntity<User> findAll(){
+        User u1 = new User(null, "Maria Brown", "maria@gmail.com", "988888888", "123456");
+        return ResponseEntity.ok(u1);
+    }
+}
